@@ -23,9 +23,28 @@ export const Contact = () => {
       {data.map((user) => (
         <div className="user">{user.id}.{user.name}
         <img className="profile-photo" src={user.src} alt={user.name}/>
+        <button id={user.id} className="button" onClick={()=>{deleteUser(user.id)}}>delete</button>
+        <button onClick={editUser()}>edit</button>
         </div>
         ))}
+
+        <button onClick={validatePhone()}>+</button>
+        
     </div>
     
     )
+}
+
+function validatePhone(){
+  const regexPhone='/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im'
+
+}
+
+function deleteUser(id){
+console.log(id);
+document.getElementById(id).parentElement.remove()
+}
+
+function editUser(){
+
 }

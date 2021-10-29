@@ -39,8 +39,21 @@
 
 .user{
 text-transform: capitalize;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+flex-direction: column;
 }
 
 .users{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 
+}
+
+.button{
+  margin:10px;
 }
