@@ -22,11 +22,18 @@ export const Contact = () => {
     return (
         <div className="users">
       {data.map((user) => (
-        <div className="user">{user.id}<input type="text" id={'input'+user.id} disabled={clickEdit} placeholder={user.name} ></input>
+        <div className="user">{user.id}<input type="text" id={'input'+user.id}  placeholder={user.name} ></input>
         <img className="profile-photo" src={user.src} alt={user.name}/>
         <button id={'delete'+user.id} className="button" onClick={()=>{deleteUser(user.id)}}>delete</button>
-        <button id={'edit'+user.id} onClick={(id)=>{setClickEdit(!clickEdit)
-          //editUser(user.id)
+        <button id={'edit'+user.id} onClick={(id)=>{
+          console.log(id);
+        //document.getElementById('edit'+id).clicked=!clickEdit
+        // console.log(document.getElementById('edit'+id).clicked);
+        document.getElementById('input'+id).setAttribute("disabled","disabled");
+        console.log(document.getElementById('input'+id).disabled); 
+        //document.getElementById('input'+id).disabled=setClickEdit(!clickEdit); 
+    //!document.getElementById('input'+id).disabled
+          //setClickEdit(!clickEdit)
         }}>edit</button>
         </div>
         ))}
@@ -48,8 +55,4 @@ console.log(id);
 document.getElementById('delete'+id).parentElement.remove()//TODO:local storage(?)
 }
 
-// function editUser(id){
-//   if(document.getElementById('edit'+id).clicked == true){
-//     // document.getElementById('input'+id).disabled==click
-//   }
-// }
+
