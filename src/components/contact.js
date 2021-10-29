@@ -8,7 +8,7 @@ import Michael from '../Assets/john-smith.jpg'
 import Monica from '../Assets/monica smith.jpg'
 import Sandra from '../Assets/sandra smith.jpg'
 export const Contact = () => {
-
+//TODO:add feild of the google API-{error_message: "You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started",results: [ ],status: "REQUEST_DENIED"}
     const data = [
         { id: 1, name: "alex jonathan", src:Alex },
         { id: 2, name: "janeth carton", src:Janeth },
@@ -17,14 +17,17 @@ export const Contact = () => {
         { id: 5,  name: "monica smith" ,src:Monica },
         { id: 6,  name: "sandra smith" ,src:Sandra }
       ];
-    const [contact, setContact] = useState(0);
+    const [contact, setContact] = useState(data);
+    const [clickEdit, setClickEdit] = useState(true);
     return (
         <div className="users">
       {data.map((user) => (
-        <div className="user">{user.id}.{user.name}
+        <div className="user">{user.id}<input type="text" id={'input'+user.id} disabled={clickEdit} placeholder={user.name} ></input>
         <img className="profile-photo" src={user.src} alt={user.name}/>
-        <button id={user.id} className="button" onClick={()=>{deleteUser(user.id)}}>delete</button>
-        <button onClick={editUser()}>edit</button>
+        <button id={'delete'+user.id} className="button" onClick={()=>{deleteUser(user.id)}}>delete</button>
+        <button id={'edit'+user.id} onClick={(id)=>{setClickEdit(!clickEdit)
+          //editUser(user.id)
+        }}>edit</button>
         </div>
         ))}
 
@@ -42,9 +45,11 @@ function validatePhone(){
 
 function deleteUser(id){
 console.log(id);
-document.getElementById(id).parentElement.remove()//TODO:local storage(?)
+document.getElementById('delete'+id).parentElement.remove()//TODO:local storage(?)
 }
 
-function editUser(){
-
-}
+// function editUser(id){
+//   if(document.getElementById('edit'+id).clicked == true){
+//     // document.getElementById('input'+id).disabled==click
+//   }
+// }

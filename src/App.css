@@ -58,3 +58,17 @@ margin:10px;
 .button{
   margin:10px;
 }
+
+input{
+  border: 0px;
+  text-align: center;
+  background-color: beige;
+  padding:5px;
+  text-transform: capitalize;
+}
+
+
+::placeholder{
+  color:black;
+
+}
