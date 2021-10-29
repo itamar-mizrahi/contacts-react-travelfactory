@@ -44,6 +44,8 @@ flex-wrap: wrap;
 justify-content: space-around;
 align-items: center;
 flex-direction: column;
+background-color:beige;
+margin:10px;
 }
 
 .users{
@@ -51,9 +53,6 @@ flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color:beige;
-  margin:50px;
-  border: 10px solid white;
 }
 
 .button{

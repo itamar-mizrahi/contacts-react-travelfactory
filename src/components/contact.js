@@ -42,7 +42,7 @@ function validatePhone(){
 
 function deleteUser(id){
 console.log(id);
-document.getElementById(id).parentElement.remove()
+document.getElementById(id).parentElement.remove()//TODO:local storage(?)
 }
 
 function editUser(){
