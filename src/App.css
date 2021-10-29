@@ -51,7 +51,9 @@ flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
+  background-color:beige;
+  margin:50px;
+  border: 10px solid white;
 }
 
 .button{
